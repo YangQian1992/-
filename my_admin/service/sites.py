@@ -1,11 +1,13 @@
 from django.conf.urls import url
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse,redirect
 from django.db.models.fields.related import ManyToManyField
 from django.utils.safestring import mark_safe
 from django.urls import reverse
+from django import forms
 
 
 class ModelMyAdmin():
+    model_form_class = []
     list_display = ["__str__", ]
 
     def __init__(self, model):
@@ -55,6 +57,17 @@ class ModelMyAdmin():
         new_list_display.append(ModelMyAdmin.delete)
         new_list_display.append(ModelMyAdmin.change)
         return new_list_display
+
+    # 获取默认配置类或者自定制配置类中的model_form
+    def get_model_form(self):
+        if self.model_form_class:
+            return self.model_form_class
+        else:
+            class ModelFormClass(forms.ModelForm):
+                class Meta:
+                    model = self.model
+                    fields = '__all__'
+            return ModelFormClass
 
     def listview(self, request):
         print("self-->", self)  # 当前访问模型表的配置类对象
@@ -114,30 +127,74 @@ class ModelMyAdmin():
                 inner_data_list.append(field_value)
             new_data_list.append(inner_data_list)
 
+        # 获取添加数据的url
+        add_url = self.get_add_url()
+
         return render(request, "listview.html", {
             "new_data_list": new_data_list,
             "header_list": header_list,
             "current_model": current_model,
+            "add_url":add_url,
         })
 
     def addview(self, request):
-        return HttpResponse("addview……")
+        if request.method == "POST":
+            form_obj = self.get_model_form()(request.POST)
+            if form_obj.is_valid():
+                form_obj.save()
+                list_url = self.get_list_url()
+                return redirect(list_url)
+            return render(request,"addview.html",{
+                "form_obj": form_obj,
+                "model_name": self.model_name,
+            })
+
+        form_obj = self.get_model_form()
+        return render(request,"addview.html",{
+            "form_obj":form_obj,
+            "model_name":self.model_name,
+        })
 
     def changeview(self, request, id):
-        return HttpResponse("changeview……")
+        change_obj = self.model.objects.get(pk=id)
+        if request.method == "POST":
+            form_obj = self.get_model_form()(data = request.POST,instance = change_obj)
+            if form_obj.is_valid():
+                form_obj.save()
+                list_url = self.get_list_url()
+                return redirect(list_url)
+            return render(request, "changeview.html", {
+                "form_obj": form_obj,
+                "model_name": self.model_name,
+            })
+
+        form_obj = self.get_model_form()(instance = change_obj)
+        return render(request,"changeview.html",{
+            "form_obj":form_obj,
+            "model_name":self.model_name,
+        })
 
     def deleteview(self, request, id):
-        return HttpResponse("deleteview……")
+        delete_obj = self.model.objects.get(pk=id)
+        list_url = self.get_list_url()
+
+        if request.method == "POST":
+            delete_obj.delete()
+            return redirect(list_url)
+
+        form_obj = self.get_model_form()(instance=delete_obj)
+        return render(request,"delete.html",{
+            "model_name":self.model_name,
+            "form_obj":form_obj,
+            "list_url":list_url,
+        })
 
     def get_urls_02(self):
-        model_name = self.model._meta.model_name
-        app_label = self.model._meta.app_label
-
         res = [
-            url(r'^$', self.listview, name="{}_{}_list".format(app_label, model_name)),
-            url(r'^add/$', self.addview, name="{}_{}_add".format(app_label, model_name)),
-            url(r'^(\d+)/change/$', self.changeview, name="{}_{}_change".format(app_label, model_name)),
-            url(r'^(\d+)/delete/$', self.deleteview, name="{}_{}_delete".format(app_label, model_name)),
+            url(r'^$', self.listview, name="{}_{}_list".format(self.app_label, self.model_name)),
+            url(r'^add/$', self.addview, name="{}_{}_add".format(self.app_label, self.model_name)),
+            url(r'^(\d+)/change/$', self.changeview, name="{}_{}_change".format(self.app_label, self.model_name)),
+            url(r'^(\d+)/delete/$', self.deleteview, name="{}_{}_delete".format(self.app_label, self.model_name)),
         ]
         return res
 
