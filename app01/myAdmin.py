@@ -1,13 +1,13 @@
 from my_admin.service.sites import ModelMyAdmin,site
 from app01.models import Author,AuthorDetail,Book,Publish
-from django.utils.safestring import mark_safe
+
 
 site.register(Author)
 site.register(AuthorDetail)
 
 
 class BookConfig(ModelMyAdmin):
-    list_display = ["title","price","publish","authors",ModelMyAdmin.delete,ModelMyAdmin.change]
+    list_display = ["title","price","publish","authors"]
 
 
 site.register(Book,BookConfig)
