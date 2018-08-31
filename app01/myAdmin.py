@@ -23,6 +23,13 @@ class BookModelForm(forms.ModelForm):
 class BookConfig(ModelMyAdmin):
     model_form_class = BookModelForm
     list_display = ["title","price","publish","authors"]
+    list_display_links = ["title","price"]
+    search_fields = ["title","price"]
+
+    def patch_init(self,queryset):
+        queryset.update(price = 0)
+    patch_init.short_description = "批量初始化"
+    actions = [patch_init]
 
 
 site.register(Book,BookConfig)

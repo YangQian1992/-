@@ -1,6 +1,8 @@
-class MyPage(object):
-    def __init__(self, page_num, all_data_amount, url_prefix, per_page_data=10, page_show_tags=9):
+import copy
 
+
+class MyPage(object):
+    def __init__(self, page_num, all_data_amount, request,per_page_data=5, page_show_tags=11):
         '''
         :param page_num: 当前页码
         :param all_data_amount:  总的数据量
@@ -10,9 +12,11 @@ class MyPage(object):
         '''
         self.page_num = page_num
         self.all_data_amount = all_data_amount
-        self.url_prefix = url_prefix
         self.per_page_data = per_page_data
         self.page_show_tags = page_show_tags
+
+        new_request_GET = copy.deepcopy(request.GET)
+        self.new_request_GET = new_request_GET
 
         try:
             page_num = int(page_num)
@@ -68,18 +72,30 @@ class MyPage(object):
             show_tags_right = self.total_page_num
         start = '<nav aria-label="Page navigation"> <ul class="pagination">'
         end = '</ul></nav>'
-        first_page_tag = '<li><a href="/{}/?page=1">首页</a></li>'.format(self.url_prefix)
-        last_page_tag = '<li><a href="/{}/?page={}">尾页</a></li>'.format(self.url_prefix, self.total_page_num)
-        front_page_tag = '<li><a href="/{}/?page={}">&laquo;</a></li>'.format(self.url_prefix, self.page_num - 1)
-        next_page_tag = '<li><a href="/{}/?page={}">&raquo;</a></li>'.format(self.url_prefix, self.page_num + 1)
+        self.new_request_GET["page"] = 1
+        first_page_tag = '<li><a href="?{}">首页</a></li>'.format(self.new_request_GET.urlencode())
+        self.new_request_GET["page"] = self.total_page_num
+        last_page_tag = '<li><a href="?{}">尾页</a></li>'.format(self.new_request_GET.urlencode())
+        if self.page_num - 1 == 0:
+            self.new_request_GET["page"] = 1
+        else:
+            self.new_request_GET["page"] = self.page_num - 1
+        front_page_tag = '<li><a href="?{}">&laquo;</a></li>'.format(self.new_request_GET.urlencode())
+
+        if self.page_num + 1 > self.total_page_num:
+            self.new_request_GET["page"] = self.total_page_num
+        else:
+            self.new_request_GET["page"] = self.page_num + 1
+        next_page_tag = '<li><a href="?{}">&raquo;</a></li>'.format(self.new_request_GET.urlencode())
 
         page_tag_html = ''
         for i in range(show_tags_left, show_tags_right + 1):
+            self.new_request_GET["page"] = i
             if i == self.page_num:
-                page_tag_html += '<li class="active"><a href="/{1}/?page={0}">{0}</a></li>'.format(
-                    i, self.url_prefix)
+                page_tag_html += '<li class="active"><a href="?{0}">{1}</a></li>'.format(
+                    self.new_request_GET.urlencode(),i )
             else:
-                page_tag_html += '<li><a href="/{1}/?page={0}">{0}</a></li>'.format(i, self.url_prefix)
+                page_tag_html += '<li><a href="?{0}">{1}</a></li>'.format(self.new_request_GET.urlencode(),i)
         page_tag_html = start + front_page_tag + first_page_tag + page_tag_html + last_page_tag + next_page_tag + end
 
         return page_tag_html
