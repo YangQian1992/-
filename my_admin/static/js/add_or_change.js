@@ -6,7 +6,7 @@ function pop(url,id) {
 
 function pop_back_func(form_data,pk) {
    console.log(form_data,pk);
-   var $option = $("<option>");  // 生成一个<option></option>标签
+    var $option = $("<option>");  // 生成一个<option></option>标签
     $option.html(form_data);
     $option.attr("value",pk);
     $option.attr("selected","selected");

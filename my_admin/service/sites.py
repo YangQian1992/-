@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.shortcuts import render, HttpResponse, redirect
-from django.db.models.fields.related import ManyToManyField
+from django.db.models.fields.related import ManyToManyField,ForeignKey,OneToOneField
 from django.utils.safestring import mark_safe
 from django.urls import reverse
 from django import forms
@@ -45,17 +45,35 @@ class Showlist(object):
             get_url_params = copy.deepcopy(self.request.GET)
             current_field_pk = get_url_params.get(str_field,0)
             field_obj = self.config_obj.model._meta.get_field(str_field)
-            rel_model = field_obj.rel.to
-            rel_model_queryset = rel_model.objects.all()
-            rel_model_list = []
-            for rel_model_obj in rel_model_queryset:
-                get_url_params[str_field] = rel_model_obj.pk
-                if rel_model_obj.pk == int(current_field_pk):
-                    a_tag = '<a class="active" href="?{}">{}</a>'.format(get_url_params.urlencode(), rel_model_obj)
-                else:
-                    a_tag = '<a href="?{}">{}</a>'.format(get_url_params.urlencode(),rel_model_obj)
-                rel_model_list.append(a_tag)
-            new_list_filter[str_field] = rel_model_list
+            # 新建存放表中数据的列表
+            model_list = []
+            if current_field_pk == 0:
+                a_tag = '<a style="color:purple" href="?{}">{}</a>'.format(get_url_params.urlencode(), "全部")
+            else:
+                get_url_params.pop(str_field)
+                a_tag = '<a style="color:purple" href="?{}">{}</a>'.format(get_url_params.urlencode(), "全部")
+            model_list.append(a_tag)
+            # 判断是否是关联字段
+            if isinstance(field_obj,ManyToManyField) or isinstance(field_obj,ForeignKey) or isinstance(field_obj,OneToOneField):
+                rel_model = field_obj.rel.to
+                rel_model_queryset = rel_model.objects.all()
+                for rel_model_obj in rel_model_queryset:
+                    get_url_params[str_field] = rel_model_obj.pk
+                    if rel_model_obj.pk == int(current_field_pk):
+                        a_tag = '<a class="active" href="?{}">{}</a>'.format(get_url_params.urlencode(), rel_model_obj)
+                    else:
+                        a_tag = '<a href="?{}">{}</a>'.format(get_url_params.urlencode(), rel_model_obj)
+                    model_list.append(a_tag)
+            else:
+                current_model_queryset = self.config_obj.model.objects.values(str_field)
+                for current_model_dict in current_model_queryset:
+                    get_url_params[str_field] = current_model_dict[str_field]
+                    if current_model_dict[str_field] == current_field_pk:
+                        a_tag = '<a class="active" href="?{}">{}</a>'.format(get_url_params.urlencode(), current_model_dict[str_field])
+                    else:
+                        a_tag = '<a href="?{}">{}</a>'.format(get_url_params.urlencode(),current_model_dict[str_field])
+                    model_list.append(a_tag)
+            new_list_filter[str_field] = model_list
         return new_list_filter
 
     def get_header(self):
@@ -281,7 +299,7 @@ class ModelMyAdmin():
 
         new_list_filter = show_list.get_new_list_filter()
 
-        return render(request, "listview.html", {
+        return render(request, "my-admin/listview.html", {
             "current_show_data": current_show_data,
             "header_list": header_list,
             "current_model": self.model_name,
@@ -305,11 +323,11 @@ class ModelMyAdmin():
                 if pop:
                     form_data = str(obj)
                     pk = obj.pk
-                    return render(request,"pop.html",{"form_data":form_data,"pk":pk})
+                    return render(request,"my-admin/pop.html",{"form_data":form_data,"pk":pk})
                 else:
                     list_url = self.get_list_url()
                     return redirect(list_url)
-            return render(request, "addview.html", {
+            return render(request, "my-admin/addview.html", {
                 "form_obj": form_obj,
                 "model_name": self.model_name,
             })
@@ -317,26 +335,29 @@ class ModelMyAdmin():
         form = ModelFormClass()
         form_obj = self.get_new_model_form(form)
 
-        return render(request, "addview.html", {
+        return render(request, "my-admin/addview.html", {
             "form_obj": form_obj,
             "model_name": self.model_name,
         })
 
     def changeview(self, request, id):
+        ModelFormClass = self.get_model_form()
         change_obj = self.model.objects.get(pk=id)
         if request.method == "POST":
-            form_obj = self.get_model_form()(data=request.POST, instance=change_obj)
+            form = ModelFormClass(data=request.POST, instance=change_obj)
+            form_obj = self.get_new_model_form(form)
             if form_obj.is_valid():
                 form_obj.save()
                 list_url = self.get_list_url()
                 return redirect(list_url)
-            return render(request, "changeview.html", {
+            return render(request, "my-admin/changeview.html", {
                 "form_obj": form_obj,
                 "model_name": self.model_name,
             })
 
-        form_obj = self.get_model_form()(instance=change_obj)
-        return render(request, "changeview.html", {
+        form = ModelFormClass(instance=change_obj)
+        form_obj = self.get_new_model_form(form)
+        return render(request, "my-admin/changeview.html", {
             "form_obj": form_obj,
             "model_name": self.model_name,
         })
@@ -350,7 +371,7 @@ class ModelMyAdmin():
             return redirect(list_url)
 
         form_obj = self.get_model_form()(instance=delete_obj)
-        return render(request, "delete.html", {
+        return render(request, "my-admin/delete.html", {
             "model_name": self.model_name,
             "form_obj": form_obj,
             "list_url": list_url,

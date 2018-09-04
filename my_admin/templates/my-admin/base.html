@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CRM组件</title>
+    <link rel="stylesheet" href="/static/css/ace.min.css">
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css">
+    <script src="/static/js/jquery-3.1.1.js"></script>
+    {% block page_css %}
+
+    {% endblock %}
+</head>
+<body rlt="1" style="">
+<div class="navbar" id="navbar" style="background-color: #336199">
+    <div class="navbar-container" id="navbar-container">
+        <div class="navbar-header pull-left">
+            <a href="#" class="navbar-brand">
+                <small>CRM组件</small>
+            </a>
+        </div>
+    </div>
+</div>
+<div class="main-container" id="main-container">
+    <div class="main-container-inner">
+        <div class="sidebar" id="sidebar">
+            <ul class="nav nav-list">
+                <li class="{% block teacher_active %}{% endblock %}">
+                    <a href="/teacher_list/">
+                        <span class="menu-text">教师管理控制台</span>
+                    </a>
+                </li>
+                <li class="{% block course_active %}{% endblock %}">
+                    <a href="/course_list/">
+                        <span class="menu-text">课程管理控制台</span>
+                    </a>
+                </li>
+                <li class="{% block student_active %}{% endblock %}">
+                    <a href="/student_list/">
+                        <span class="menu-text">学生管理控制台</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main-content">
+            {% block page_main %}
+
+            {% endblock %}
+        </div>
+    </div>
+</div>
+</body>
+{% block page_js %}
+
+{% endblock %}
+</html>

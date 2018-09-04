@@ -2,21 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ebe2aefe-dc3d-4ba0-bfd0-86543d12e4a8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/my_admin/static/css/list_filter.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_admin/static/js/add_or_change.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_admin/static/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_admin/static/js/jquery-3.1.1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/pop.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_admin/static/css/ace.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app01/myAdmin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/myAdmin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app01/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my_admin/service/sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/service/sites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/static/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/my_form.css" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/static/css/my_form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/addview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/addview.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/form.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/listview.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/listview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my_admin/static/js/add_or_change.js" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/static/js/add_or_change.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/addview.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/addview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/changeview.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/changeview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/delete.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/form.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/form.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/listview.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/listview.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/pop.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/pop.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -45,17 +45,6 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="db" type="feb32156:DbDataSourceImpl" />
       </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="db" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
-      </path>
     </expand>
     <select />
   </component>
@@ -63,45 +52,23 @@
     <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="sites.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/my_admin/service/sites.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="260" column="14" selection-start-line="260" selection-start-column="14" selection-end-line="260" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="addview.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/addview.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="add_or_change.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my_admin/static/js/add_or_change.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="3" column="60" lean-forward="true" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="Python Script" />
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>to</find>
+      <find>Showlist</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -116,23 +83,30 @@
         <option value="$PROJECT_DIR$/app02/models.py" />
         <option value="$PROJECT_DIR$/static/css/form_css.css" />
         <option value="$PROJECT_DIR$/batch_add_data.py" />
-        <option value="$PROJECT_DIR$/app01/tests.py" />
         <option value="$PROJECT_DIR$/utils/mypage.py" />
         <option value="$PROJECT_DIR$/my_admin/utils/mypage.py" />
         <option value="$PROJECT_DIR$/static/css/list_filter.css" />
-        <option value="$PROJECT_DIR$/app01/myAdmin.py" />
         <option value="$PROJECT_DIR$/static/css/pop.css" />
         <option value="$PROJECT_DIR$/templates/delete.html" />
-        <option value="$PROJECT_DIR$/templates/changeview.html" />
-        <option value="$PROJECT_DIR$/templates/listview.html" />
         <option value="$PROJECT_DIR$/static/css/my_form.css" />
         <option value="$PROJECT_DIR$/templates/addview.html" />
         <option value="$PROJECT_DIR$/templates/form.html" />
         <option value="$PROJECT_DIR$/my_admin/static/css/my_form.css" />
-        <option value="$PROJECT_DIR$/my_admin/service/sites.py" />
         <option value="$PROJECT_DIR$/app01/models.py" />
-        <option value="$PROJECT_DIR$/my_admin/static/js/add_or_change.js" />
         <option value="$PROJECT_DIR$/templates/pop.html" />
+        <option value="$PROJECT_DIR$/templates/changeview.html" />
+        <option value="$PROJECT_DIR$/my_admin/static/js/add_or_change.js" />
+        <option value="$PROJECT_DIR$/templates/listview.html" />
+        <option value="$PROJECT_DIR$/my_admin/static/css/list_filter.css" />
+        <option value="$PROJECT_DIR$/app01/tests.py" />
+        <option value="$PROJECT_DIR$/my_admin/service/sites.py" />
+        <option value="$PROJECT_DIR$/app01/myAdmin.py" />
+        <option value="$PROJECT_DIR$/my_admin/templates/bootstrap.html" />
+        <option value="$PROJECT_DIR$/my_admin/templates/my-admin/listview.html" />
+        <option value="$PROJECT_DIR$/my_admin/templates/my-admin/addview.html" />
+        <option value="$PROJECT_DIR$/my_admin/templates/my-admin/changeview.html" />
+        <option value="$PROJECT_DIR$/my_admin/templates/my-admin/base.html" />
+        <option value="$PROJECT_DIR$/my_admin/templates/my-admin/delete.html" />
       </list>
     </option>
   </component>
@@ -146,10 +120,10 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="725" />
-    <option name="height" value="708" />
+    <option name="x" value="655" />
+    <option name="y" value="14" />
+    <option name="width" value="667" />
+    <option name="height" value="731" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -159,6 +133,17 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="自定增删改查的组件" type="cbb8eebc:String" user="自定增删改查的组件" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -169,77 +154,36 @@
             <path>
               <item name="自定增删改查的组件" type="b2602c69:ProjectViewProjectNode" />
               <item name="自定增删改查的组件" type="462c0819:PsiDirectoryNode" />
-              <item name="app01" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="自定增删改查的组件" type="b2602c69:ProjectViewProjectNode" />
-              <item name="自定增删改查的组件" type="462c0819:PsiDirectoryNode" />
               <item name="my_admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="自定增删改查的组件" type="b2602c69:ProjectViewProjectNode" />
-              <item name="自定增删改查的组件" type="462c0819:PsiDirectoryNode" />
-              <item name="my_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="自定增删改查的组件" type="b2602c69:ProjectViewProjectNode" />
-              <item name="自定增删改查的组件" type="462c0819:PsiDirectoryNode" />
-              <item name="my_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="自定增删改查的组件" type="b2602c69:ProjectViewProjectNode" />
-              <item name="自定增删改查的组件" type="462c0819:PsiDirectoryNode" />
-              <item name="my_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="自定增删改查的组件" type="b2602c69:ProjectViewProjectNode" />
-              <item name="自定增删改查的组件" type="462c0819:PsiDirectoryNode" />
-              <item name="my_admin" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="自定增删改查的组件" type="b2602c69:ProjectViewProjectNode" />
-              <item name="自定增删改查的组件" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="自定增删改查的组件" type="b2602c69:ProjectViewProjectNode" />
-              <item name="自定增删改查的组件" type="462c0819:PsiDirectoryNode" />
-              <item name="自定增删改查的组件" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/校园管理系统" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\自定增删改查的组件\my_admin" />
-      <recent name="E:\自定增删改查的组件" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\自定增删改查的组件\my_admin\static\css" />
       <recent name="E:\自定增删改查的组件\my_admin\static\js" />
       <recent name="E:\自定增删改查的组件\my_admin" />
       <recent name="E:\自定增删改查的组件\templates" />
       <recent name="E:\自定增删改查的组件" />
-      <recent name="E:\自定增删改查的组件\static\css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\自定增删改查的组件\my_admin\templates\myadmin" />
+      <recent name="E:\自定增删改查的组件\my_admin" />
+      <recent name="E:\自定增删改查的组件" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -343,22 +287,21 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32857144" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.6571429" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.35535714" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.5303571" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.29402757" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2259542" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" weight="0.38778627" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32977098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="manage.py@自定增删改查的组件" order="7" weight="0.61785716" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -384,52 +327,10 @@
           <option name="timeStamp" value="3" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="13" />
+      <option name="time" value="14" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/my_admin/service/sites.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6169">
-          <caret line="199" column="13" lean-forward="true" selection-start-line="199" selection-start-column="13" selection-end-line="199" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/addview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="16" column="41" selection-start-line="16" selection-start-column="41" selection-end-line="16" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/listview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="310">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="44" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_admin/service/sites.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5828">
-          <caret line="188" column="32" selection-start-line="188" selection-start-column="32" selection-end-line="188" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1302">
-          <caret line="42" column="110" selection-start-line="42" selection-start-column="102" selection-end-line="42" selection-end-column="110" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_admin/service/sites.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2449">
-          <caret line="83" column="41" selection-start-line="83" selection-start-column="41" selection-end-line="83" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app01/myAdmin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="527">
@@ -466,7 +367,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/listview.html">
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/listview.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="403">
           <caret line="13" column="60" selection-start-line="13" selection-start-column="60" selection-end-line="13" selection-end-column="60" />
@@ -550,13 +451,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app01/tests.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="31">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/batch_add_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="434">
@@ -571,21 +465,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/http/request.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="449" column="36" selection-start-line="449" selection-start-column="36" selection-end-line="449" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/utils/mypage.py" />
-    <entry file="file://$PROJECT_DIR$/my_admin/utils/mypage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/fields/related_descriptors.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4234">
@@ -601,59 +481,10 @@
       </provider>
     </entry>
     <entry file="file://G:/QQ下载专用/day87课上笔记/s12day84/app01/tests.py" />
-    <entry file="das://a56933cb-e67c-40f4-a6e4-e345577bd3de/schema/main/table/app01_book">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/fields/related.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2325">
-          <caret line="768" column="26" selection-start-line="768" selection-start-column="18" selection-end-line="768" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/forms/boundfield.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/changeview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/listview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my_admin/static/css/list_filter.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" lean-forward="true" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/自定增删改查的组件/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1896">
-          <caret line="126" column="1" lean-forward="true" selection-start-line="126" selection-start-column="1" selection-end-line="126" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -685,45 +516,181 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app01/myAdmin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="28" column="24" lean-forward="true" selection-start-line="28" selection-start-column="24" selection-end-line="28" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/pop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/form.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="18" column="20" lean-forward="true" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my_admin/static/js/add_or_change.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="3" column="60" lean-forward="true" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+        <state relative-caret-position="279">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/addview.html">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/db/models/fields/related.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
+        <state relative-caret-position="199">
+          <caret line="795" column="31" lean-forward="true" selection-start-line="795" selection-start-column="31" selection-end-line="795" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/static/css/list_filter.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/core/handlers/wsgi.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-475">
+          <caret line="93" column="13" selection-start-line="93" selection-start-column="13" selection-end-line="93" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/site-packages/django/http/request.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-9601">
+          <caret line="57" column="9" lean-forward="true" selection-start-line="57" selection-start-column="9" selection-end-line="57" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://a56933cb-e67c-40f4-a6e4-e345577bd3de/schema/main/table/app01_book">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app01/tests.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/my_admin/service/sites.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="260" column="14" selection-start-line="260" selection-start-column="14" selection-end-line="260" selection-end-column="14" />
+        <state relative-caret-position="966">
+          <caret line="43" column="33" selection-start-line="43" selection-start-column="33" selection-end-line="43" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+            <element signature="e#1558#3292#0" />
+            <element signature="e#2019#2596#0" />
+            <element signature="e#3005#3579#0" />
+            <element signature="e#2791#3561#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app01/myAdmin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/utils/mypage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2194">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/views.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/static/css/ace.min.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/bootstrap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-527">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#1;n#a#0;n#li#1;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#a#0;n#li#2;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#a#0;n#li#3;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#a#0;n#li#4;n#ul#0;n#li#0;n#ul#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#7457#7462#0#HTML" expanded="true" />
+            <element signature="e#8493#8498#0#HTML" expanded="true" />
+            <element signature="e#8955#8960#0#HTML" expanded="true" />
+            <element signature="e#10281#10286#0#HTML" expanded="true" />
+            <element signature="e#15601#15607#1#HTML" expanded="true" />
+            <element signature="e#15693#15699#1#HTML" expanded="true" />
+            <element signature="e#15785#15791#1#HTML" expanded="true" />
+            <element signature="e#15877#15883#1#HTML" expanded="true" />
+            <element signature="e#16160#16166#0#HTML" expanded="true" />
+            <element signature="e#16318#16324#0#HTML" expanded="true" />
+            <element signature="e#16474#16480#0#HTML" expanded="true" />
+            <element signature="e#27007#27013#0#HTML" expanded="true" />
+            <element signature="e#27034#27040#0#HTML" expanded="true" />
+            <element signature="e#27629#27637#0#HTML" expanded="true" />
+            <element signature="e#28890#28898#0#HTML" expanded="true" />
+            <element signature="e#29525#29533#0#HTML" expanded="true" />
+            <element signature="e#30159#30167#0#HTML" expanded="true" />
+            <element signature="e#30466#30472#0#HTML" expanded="true" />
+            <element signature="e#30503#30509#0#HTML" expanded="true" />
+            <element signature="e#34098#34104#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/自定增删改查的组件/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-487">
+          <caret line="56" column="3" selection-start-line="56" selection-start-column="3" selection-end-line="56" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/addview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="62">
+          <caret line="14" column="19" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/changeview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/listview.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="4" column="14" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/form.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="9" column="12" selection-start-line="9" selection-start-column="12" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/pop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="9" column="19" lean-forward="true" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/delete.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="21" column="6" selection-start-line="21" selection-start-column="6" selection-end-line="21" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
