@@ -25,11 +25,15 @@ class BookConfig(ModelMyAdmin):
     list_display = ["title","price","publish","authors"]
     list_display_links = ["title","price"]
     search_fields = ["title","price"]
+    list_filter = ["publish","authors"]
+    # list_filter = ["title","publish","authors"]
 
     def patch_init(self,queryset):
         queryset.update(price = 0)
     patch_init.short_description = "批量初始化"
     actions = [patch_init]
+
+
 
 
 site.register(Book,BookConfig)

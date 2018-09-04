@@ -6,6 +6,7 @@ from django.urls import reverse
 from django import forms
 from my_admin.utils.mypage import MyPage
 from django.db.models import Q
+import copy
 
 
 class Showlist(object):
@@ -16,7 +17,7 @@ class Showlist(object):
     def __init__(self, config_obj, data_list, request):
         self.config_obj = config_obj
         self.data_list = data_list
-
+        self.request = request
         # 分页
         current_page = request.GET.get("page", 1)  # 获取当前页面
         all_data_amount = self.data_list.count()  # 获取当前模型表中的总数据量
@@ -36,6 +37,26 @@ class Showlist(object):
                 "name":func.__name__,
             })
         return new_actions
+
+    # 获取一个新式list_filter格式:{"publish":[xx,xx,],"authors":[xx,xx,]}
+    def get_new_list_filter(self):
+        new_list_filter = {}
+        for str_field in self.config_obj.list_filter:
+            get_url_params = copy.deepcopy(self.request.GET)
+            current_field_pk = get_url_params.get(str_field,0)
+            field_obj = self.config_obj.model._meta.get_field(str_field)
+            rel_model = field_obj.rel.to
+            rel_model_queryset = rel_model.objects.all()
+            rel_model_list = []
+            for rel_model_obj in rel_model_queryset:
+                get_url_params[str_field] = rel_model_obj.pk
+                if rel_model_obj.pk == int(current_field_pk):
+                    a_tag = '<a class="active" href="?{}">{}</a>'.format(get_url_params.urlencode(), rel_model_obj)
+                else:
+                    a_tag = '<a href="?{}">{}</a>'.format(get_url_params.urlencode(),rel_model_obj)
+                rel_model_list.append(a_tag)
+            new_list_filter[str_field] = rel_model_list
+        return new_list_filter
 
     def get_header(self):
         # 创建数据表格头部分
@@ -99,6 +120,7 @@ class ModelMyAdmin():
     list_display_links = []
     search_fields = []
     actions = []
+    list_filter = []
 
     def __init__(self, model):
         self.model = model
@@ -108,10 +130,11 @@ class ModelMyAdmin():
     # 批量删除函数
     def patch_delete(self,queryset):
         queryset.delete()
-
     # 定义汉语描述
     patch_delete.short_description = "批量删除"
 
+
+    # 获取增删改查的url
     def get_list_url(self):
         list_url = "{}_{}_list".format(self.app_label, self.model_name)
         return reverse(list_url)
@@ -128,6 +151,8 @@ class ModelMyAdmin():
         list_url = "{}_{}_change".format(self.app_label, self.model_name)
         return reverse(list_url, args=(data_obj.pk,))
 
+
+    # 默认操作函数
     def delete(self, data_obj=None, is_header=False):
         if is_header:
             return "操作"
@@ -146,6 +171,7 @@ class ModelMyAdmin():
         else:
             return mark_safe('<input type="checkbox" name="pk_list" value={}>'.format(data_obj.pk))
 
+
     # 获取新的list_display
     def get_new_list_display(self):
         new_list_display = []
@@ -156,6 +182,8 @@ class ModelMyAdmin():
             # 若继承默认配置类的list_display_links，则需要默认添加编辑列
             new_list_display.append(ModelMyAdmin.change)
         return new_list_display
+
+
 
     # 获取默认配置类或者自定制配置类中的model_form
     def get_model_form(self):
@@ -168,6 +196,28 @@ class ModelMyAdmin():
                     fields = '__all__'
 
             return ModelFormClass
+
+    # 获取新的model_form(添加pop功能)
+    def get_new_model_form(self,form):
+        from django.forms.models import ModelChoiceField
+        for bfield in form:
+            if isinstance(bfield.field, ModelChoiceField):
+                bfield.is_pop = True
+                # 获取字段的字符串格式
+                str_field = bfield.name
+                # 获取关联字段所对应的表(类)
+                rel_model = self.model._meta.get_field(str_field).rel.to
+                # 获取关联字段所对应的表名
+                str_model_name = rel_model._meta.model_name
+                # 获取关联字段所对应的app名
+                str_app_label = rel_model._meta.app_label
+                # 通过反射获取到url
+                _url = reverse("{}_{}_add".format(str_app_label,str_model_name))
+                bfield.url = _url
+                bfield.pop_back_id = "id_" + str_field
+        return form
+
+
 
     # 获取定位搜索条件
     def get_search_condition(self, request):
@@ -183,6 +233,16 @@ class ModelMyAdmin():
         # 若不走if条件，则返回的是空搜索条件，即会显示所有信息
         return search_condition
 
+    # 获取筛选搜索条件
+    def get_filter_condition(self,request):
+        filter_condition = Q()
+        for key,val in request.GET.items():
+            if key in ["page","query"]:
+                continue
+            filter_condition.children.append((key,val))
+        return filter_condition
+
+    # 视图函数（增删改查）
     def listview(self, request):
         if request.method == "POST":
             func_name = request.POST.get("actions","")
@@ -190,22 +250,27 @@ class ModelMyAdmin():
             print("actions-->",func_name) #  food: --> patch_init
             print("pk_list-->",pk_list) # pk_list--> ['5061', '5062', '5063']
             queryset = self.model.objects.filter(pk__in = pk_list)
-            # func_name-->str 故需要通过反射来找到函数名
-            action = getattr(self,func_name)
-            # 执行函数
-            action(queryset)
+            if func_name:
+                # func_name-->str 故需要通过反射来找到函数名
+                action = getattr(self,func_name)
+                # 执行函数
+                action(queryset)
 
         # 获取添加数据的url
         add_url = self.get_add_url()
+        # 获取展示数据的url
+        list_url = self.get_list_url()
 
         # 获取当前模型表的所有数据
         data_list = self.model.objects.all()
 
         # 获取定位搜索条件对象
         search_condition = self.get_search_condition(request)
+        # 获取筛选搜索条件对象
+        filter_condition = self.get_filter_condition(request)
         # 数据过滤
-        data_list = data_list.filter(search_condition)
-
+        data_list = data_list.filter(search_condition).filter(filter_condition)
+        # data_list = data_list.filter(search_condition)
         # 需求：要用到Showlist类中的两个方法，故需要先实例化对象
         show_list = Showlist(self, data_list, request)
         # 调用类中的方法或属性
@@ -213,6 +278,8 @@ class ModelMyAdmin():
         current_show_data = show_list.get_body()
         page_html = show_list.myPage_obj.ret_html()
         new_actions = show_list.get_new_actions()
+
+        new_list_filter = show_list.get_new_list_filter()
 
         return render(request, "listview.html", {
             "current_show_data": current_show_data,
@@ -222,21 +289,34 @@ class ModelMyAdmin():
             "page_html": page_html,
             "search_fields": self.search_fields,
             "new_actions": new_actions,
+            "list_filter":self.list_filter,
+            "list_url":list_url,
+            "new_list_filter":new_list_filter,
         })
 
     def addview(self, request):
+        ModelFormClass = self.get_model_form()
         if request.method == "POST":
-            form_obj = self.get_model_form()(request.POST)
+            form = ModelFormClass(request.POST)
+            form_obj = self.get_new_model_form(form)
             if form_obj.is_valid():
-                form_obj.save()
-                list_url = self.get_list_url()
-                return redirect(list_url)
+                obj = form_obj.save()
+                pop = request.GET.get("pop","")
+                if pop:
+                    form_data = str(obj)
+                    pk = obj.pk
+                    return render(request,"pop.html",{"form_data":form_data,"pk":pk})
+                else:
+                    list_url = self.get_list_url()
+                    return redirect(list_url)
             return render(request, "addview.html", {
                 "form_obj": form_obj,
                 "model_name": self.model_name,
             })
 
-        form_obj = self.get_model_form()
+        form = ModelFormClass()
+        form_obj = self.get_new_model_form(form)
+
         return render(request, "addview.html", {
             "form_obj": form_obj,
             "model_name": self.model_name,

@@ -23,9 +23,6 @@ class AuthorDetail(models.Model):
     telephone = models.BigIntegerField(verbose_name="作者联系方式")
     addr = models.CharField(max_length=64,verbose_name="作者联系地址")
 
-    def __str__(self):
-        return self.author.name
-
     class Meta:
         verbose_name = "作者详情表"
         verbose_name_plural = verbose_name

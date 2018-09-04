@@ -15,3 +15,12 @@ input,select{
     -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
     transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
 }
+.pop_btn{
+    font-size: 28px;
+    position:absolute;
+    right:-27px;
+    top:0
+}
+.my_tag{
+    position: relative;
+}

@@ -7,8 +7,11 @@
             <div>
                 <label for="{{ field.id_for_label }}">{{ field.label }}</label>
             </div>
-            <div>
+            <div class="my_tag">
                 {{ field }}
+                {% if field.is_pop %}
+                    <span class="pop_btn"><a style="text-decoration:none" href="javascript:void(0)" onclick="pop('{{ field.url }}','{{ field.pop_back_id }}')">+</a></span>
+                {% endif %}
             </div>
             <div class="has-error" style="color: red">
                 {{ field.errors.0 }}
