@@ -5,6 +5,8 @@ class Author(models.Model):
     nid = models.AutoField(primary_key=True)
     name = models.CharField(max_length=32,verbose_name="作者姓名")
     age = models.IntegerField(verbose_name="作者年龄")
+    gender_choices = ((1,"男"),(2,"女"),(3,"保密"))
+    gender = models.IntegerField(verbose_name="性别",choices=gender_choices)
 
     # 与AuthorDetail建立一对一的关系
     authorDetail = models.OneToOneField(to="AuthorDetail",on_delete=models.CASCADE)

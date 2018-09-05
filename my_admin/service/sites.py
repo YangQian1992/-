@@ -377,6 +377,12 @@ class ModelMyAdmin():
             "list_url": list_url,
         })
 
+    # 给特定的一张表添加一个新的url
+    def extra_url(self):
+        # 默认配置类中返回一个空列表
+        return []
+
+    # url二级分发
     def get_urls_02(self):
         res = [
             url(r'^$', self.listview, name="{}_{}_list".format(self.app_label, self.model_name)),
@@ -384,6 +390,7 @@ class ModelMyAdmin():
             url(r'^(\d+)/change/$', self.changeview, name="{}_{}_change".format(self.app_label, self.model_name)),
             url(r'^(\d+)/delete/$', self.deleteview, name="{}_{}_delete".format(self.app_label, self.model_name)),
         ]
+        res.extend(self.extra_url())
         return res
 
     @property

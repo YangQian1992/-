@@ -106,3 +106,27 @@
         </div>
     </div>
 {% endblock page_main %}
+
+{% block page_js %}
+<!-- 将性别一列设置成下拉菜单，可供用户选择内容并将内容更新到数据库中 开始-->
+<script>
+    $(".gender").change(function () {
+        let pk = $(this).attr("pk");
+        let gender = $(this).val();
+        $.ajax({
+            url:'/my_admin/app01/author/' + pk + '/change_gender/',
+            type:"post",
+            data:{
+                "gender":gender,
+            },
+            success:function (res) {
+                console.log(res);
+            },
+            error:function (error) {
+                console.log(error);
+            }
+        })
+    })
+</script>
+<!-- 将性别一列设置成下拉菜单，可供用户选择内容并将内容更新到数据库中 结束-->
+{% endblock %}
