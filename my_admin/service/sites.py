@@ -146,7 +146,7 @@ class ModelMyAdmin():
         self.app_label = self.model._meta.app_label
 
     # 批量删除函数
-    def patch_delete(self,queryset):
+    def patch_delete(self,request,queryset):
         queryset.delete()
     # 定义汉语描述
     patch_delete.short_description = "批量删除"
@@ -272,7 +272,7 @@ class ModelMyAdmin():
                 # func_name-->str 故需要通过反射来找到函数名
                 action = getattr(self,func_name)
                 # 执行函数
-                action(queryset)
+                action(request,queryset)
 
         # 获取添加数据的url
         add_url = self.get_add_url()

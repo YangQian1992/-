@@ -56,7 +56,7 @@ class BookConfig(ModelMyAdmin):
     search_fields = ["title","price"]
     list_filter = ["publish","authors"]
 
-    def patch_init(self,queryset):
+    def patch_init(self,request,queryset):
         queryset.update(price = 0)
     patch_init.short_description = "批量初始化"
     actions = [patch_init]

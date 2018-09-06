@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ebe2aefe-dc3d-4ba0-bfd0-86543d12e4a8" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app01/migrations/0006_author_gender.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my_admin/static/js/setupAjax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/myAdmin.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/myAdmin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app01/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app01/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_admin/service/sites.py" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/service/sites.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_admin/templates/my-admin/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my_admin/templates/my-admin/listview.html" beforeDir="false" afterPath="$PROJECT_DIR$/my_admin/templates/my-admin/listview.html" afterDir="false" />
-    </list>
+    <list default="true" id="ebe2aefe-dc3d-4ba0-bfd0-86543d12e4a8" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -40,6 +29,17 @@
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="db" type="feb32156:DbDataSourceImpl" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="main: schema" type="90513b60:SqliteImplModel$Schema" />
+      </path>
     </expand>
     <select />
   </component>
@@ -51,11 +51,17 @@
       <file leaf-file-name="listview.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/listview.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3875">
+            <state relative-caret-position="13492">
               <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
-              <folding>
-                <element signature="e#162#5053#0#HTML" />
-              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app01_author" pinned="false" current-in-tab="true">
+        <entry file="das://a56933cb-e67c-40f4-a6e4-e345577bd3de/schema/main/table/app01_author">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -109,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app01/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="155">
-              <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+              <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -408,9 +414,10 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.5303571" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.5058824" />
+      <window_info anchor="bottom" id="Database Console" order="7" weight="0.32857144" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.5053435" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.38778627" />
+      <window_info anchor="right" id="Database" order="3" visible="true" weight="0.38778627" />
       <window_info anchor="right" id="SciView" order="3" weight="0.32977098" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
@@ -422,7 +429,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Database Console" order="7" weight="0.32857144" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
@@ -619,13 +625,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="das://a56933cb-e67c-40f4-a6e4-e345577bd3de/schema/main/table/app01_author">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://a56933cb-e67c-40f4-a6e4-e345577bd3de/schema/main/table/app01_authordetail">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -746,12 +745,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/listview.html">
+    <entry file="file://$PROJECT_DIR$/app01/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3875">
-          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
+        <state relative-caret-position="155">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
           <folding>
-            <element signature="e#162#5053#0#HTML" />
+            <element signature="e#0#57#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app01/myAdmin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="124">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#52#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -791,23 +800,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app01/myAdmin.py">
+    <entry file="file://$PROJECT_DIR$/my_admin/templates/my-admin/listview.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="28" column="31" selection-start-line="28" selection-start-column="25" selection-end-line="28" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#52#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="13492">
+          <caret line="125" column="22" selection-start-line="125" selection-start-column="22" selection-end-line="125" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app01/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="5" column="19" lean-forward="true" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#57#0" expanded="true" />
-          </folding>
+    <entry file="das://a56933cb-e67c-40f4-a6e4-e345577bd3de/schema/main/table/app01_author">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
